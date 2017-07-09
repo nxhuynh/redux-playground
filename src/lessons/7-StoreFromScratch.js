@@ -24,7 +24,7 @@ const SampleCode = (update) => {
       // to unsubscribe
       // return a function that removes listener from listeners array
       return () => {
-        listeners = listeners.filter(l => l !== listeners);
+        listeners = listeners.filter(l => l !== listener);
       }
     }
 
@@ -39,16 +39,18 @@ const SampleCode = (update) => {
     return {getState, dispatch, subscribe}
   }
 
-  const store = createStore(counter);
+  const store = createStore(counter)
 
-  const render = () => {
-    var s = store.getState()
-    console.log(s)
-    update(s)
-  };
+  const logStateChange = () => { console.log(store.getState()) }
 
+  const render = () => { update(store.getState()) };
+
+  var unsubscribeLogStateChange = store.subscribe(logStateChange);
   store.subscribe(render);
-  render(); // calling once to render the initial state (0), then the subscribe will update subsequently
+  // calling once to render the initial state (0), then the subscribe will update subsequently
+  render();
+  // to unsubscribe logStateChange()
+  unsubscribeLogStateChange()
 
   document.addEventListener('click', () => {
     store.dispatch({ type : 'INCREMENT' })
