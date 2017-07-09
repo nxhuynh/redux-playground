@@ -2,6 +2,7 @@ import React from 'react'
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import CounterReducer from './lessons/5-CounterReducer'
 import StoreMethods from './lessons/6-StoreMethods'
+import Lesson7 from './lessons/7-StoreFromScratch'
 import NavPane from './Nav'
 
 const Home = () => (
@@ -22,6 +23,7 @@ const MyRouter = () => (
             <Route exact path="/" component={Home}></Route>
             <Route path="/5" component={CounterReducer}></Route>
             <Route path="/6" component={StoreMethods}></Route>
+            <Route path="/7" component={Lesson7}></Route>
             <Route render={()=>{return <p>Not found</p>}}/>
           </Switch>
         </div>
