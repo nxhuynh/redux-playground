@@ -20,7 +20,7 @@ const SampleCode = (update) => {
   };
 
   store.subscribe(render);
-  render(); // calling once to render the initial state (0), then the subscribe will update subsequently
+  store.getState() // set initial state (0)
 
   document.addEventListener('click', () => {
     store.dispatch({ type : 'INCREMENT' })

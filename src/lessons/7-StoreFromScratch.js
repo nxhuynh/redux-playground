@@ -47,8 +47,7 @@ const SampleCode = (update) => {
 
   var unsubscribeLogStateChange = store.subscribe(logStateChange);
   store.subscribe(render);
-  // calling once to render the initial state (0), then the subscribe will update subsequently
-  render();
+  store.getState() // set initial state (0)
   // to unsubscribe logStateChange()
   unsubscribeLogStateChange()
 
