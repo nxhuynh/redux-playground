@@ -8,6 +8,7 @@ const NavPane = () => (
     <NavLink to="/6" className="w3-bar-item w3-button">06. Store Methods: getState(), dispatch(), and subscribe()</NavLink>
     <NavLink to="/7" className="w3-bar-item w3-button">07. Implementing Store from Scratch</NavLink>
     <NavLink to="/8" className="w3-bar-item w3-button">08. React Counter Example</NavLink>
+    <NavLink to="/9" className="w3-bar-item w3-button">09. Avoiding Array Mutation</NavLink>
   </div>
 )
 
